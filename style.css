@@ -146,3 +146,104 @@ footer{padding:28px 0;background:var(--ink);color:#fff;text-align:center}.footer
 .classified-box{background:#1b1916;color:#f8eedc;border:5px solid var(--ink);border-radius:22px;padding:30px;box-shadow:10px 11px 0 var(--ink);position:relative;overflow:hidden}.classified-box:after{content:"CLASSIFIED";position:absolute;right:-30px;top:28px;color:#c22b2b55;font:900 4rem 'Bangers';transform:rotate(12deg)}.classified-box h2{font:900 clamp(2.7rem,6vw,5rem)/.9 'Luckiest Guy';margin:12px 0}.classified-box h2 span{color:var(--pink)}.classified-box p{font-size:1.08rem;line-height:1.7;max-width:760px}.clue-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.clue-row div{border:3px solid #f8eedc;border-radius:999px;padding:8px 12px;font-weight:900}
 @media(max-width:900px){.detail-hero-grid,.detail-page-grid{grid-template-columns:1fr}.poster-feature,.featured-poster{justify-self:center;max-width:680px}.rule-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.detail-title{font-size:clamp(3.7rem,17vw,6rem)}.timeline-grid,.rule-grid{grid-template-columns:1fr}.event-detail{padding:60px 0}.fact{min-width:0;flex:1}.detail-page-grid{gap:28px}.poster-feature img,.featured-poster img{max-height:none}.classified-box{padding:22px}.mystery-stamp{font-size:1.25rem}}
+
+/* ================================
+   ACADEMIC FEUD PAGE
+   ================================ */
+
+.academic-page {
+    background: var(--pink);
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+/* Main academic feud content */
+.academic-page .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Case-file badge */
+.academic-page .case-file {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    padding: 12px 20px;
+}
+
+/* Page heading */
+.academic-page h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1;
+    margin: 20px 0 25px;
+}
+
+/* Intro text */
+.academic-page .intro,
+.academic-page p {
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.5;
+}
+
+/* Event information */
+.academic-page .event-info {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 25px;
+}
+
+/* Make the poster/card sit below the information */
+.academic-page .poster-card {
+    position: relative;
+    margin-top: 45px;
+    z-index: 2;
+}
+
+/* Comic speech bubble */
+.academic-page .fun-card {
+    position: relative;
+    z-index: 3;
+    margin-top: 45px;
+}
+
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 768px) {
+
+    .academic-page {
+        padding-top: 95px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .academic-page .case-file {
+        font-size: 15px;
+        margin-bottom: 20px;
+        padding: 10px 15px;
+    }
+
+    .academic-page h1 {
+        font-size: 42px;
+        margin-top: 15px;
+    }
+
+    .academic-page p,
+    .academic-page .intro {
+        font-size: 17px;
+    }
+
+    .academic-page .event-info {
+        font-size: 18px;
+    }
+
+    .academic-page .poster-card,
+    .academic-page .fun-card {
+        margin-top: 30px;
+    }
+}
