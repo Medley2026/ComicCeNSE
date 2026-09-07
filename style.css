@@ -33,7 +33,7 @@ img{max-width:100%;display:block}
 .lead{font-size:1.08rem;line-height:1.75;max-width:760px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:22px;padding:13px 18px;border:4px solid var(--ink);border-radius:14px;background:var(--yellow);font-weight:900;text-transform:uppercase;box-shadow:var(--shadow);transition:.2s;cursor:pointer}
 .btn:hover{transform:translate(-3px,-3px);box-shadow:10px 11px 0 var(--ink)}
-.btn.pink{background:var(--pink);color:#000}.btn.cyan{background:var(--cyan)}.btn.white{background:#fff}
+.btn.pink{background:var(--pink);color:#fff}.btn.cyan{background:var(--cyan)}.btn.white{background:#fff}
 .btn.ghost{background:#fff}
 .hero-poster{position:relative;max-width:530px;justify-self:end;transform:rotate(2deg)}
 .hero-poster img{width:100%;border:6px solid var(--ink);border-radius:22px;box-shadow:12px 14px 0 var(--ink);background:#fff}
@@ -48,6 +48,9 @@ img{max-width:100%;display:block}
 .section-title .pink{color:var(--pink)}.section-title .cyan{color:var(--cyan)}.section-title .yellow{color:var(--yellow)}
 .mono{font:900 .75rem 'Nunito';text-transform:uppercase;letter-spacing:.1em}
 .comic-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.poster-gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;padding:6px 0}
+.poster-gallery .comic-card{flex:0 1 calc((100% - 44px)/3);min-width:280px}
+.poster-gallery .comic-card img{width:100%;height:clamp(340px,36vw,470px);aspect-ratio:auto;object-fit:contain;background:#fff}
 .comic-card{background:#fff;border:5px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transform:rotate(var(--r,0deg));transition:.25s}
 .comic-card:hover{transform:translateY(-7px) rotate(0)}
 .comic-card img{width:100%;aspect-ratio:4/5;object-fit:cover}
@@ -65,7 +68,7 @@ img{max-width:100%;display:block}
 .schedule-card .tag{font-size:.72rem;font-weight:900;text-transform:uppercase;color:#666;letter-spacing:.08em}
 .event-line{padding:11px 0;border-top:2px dashed #10101455;margin-top:11px}
 .event-line b{display:block}.event-line span{display:block;margin-top:3px;color:#444;font-size:.92rem}
-.fun-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fun-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .fun-card{background:#fff;border:5px solid var(--ink);border-radius:22px;padding:24px;box-shadow:var(--shadow);min-height:180px}
 .fun-card:nth-child(2){background:var(--pink);color:#fff;transform:rotate(1deg)}
 .fun-card:nth-child(3){background:var(--cyan);transform:rotate(-1deg)}
@@ -97,31 +100,8 @@ img{max-width:100%;display:block}
 .sport-events{display:grid;gap:10px;margin-top:18px}.sport-events>div{background:#fff8bc;border:3px solid var(--ink);border-radius:12px;padding:10px}
 .sport-events b{display:block}.sport-events span{display:block;font-size:.88rem;margin-top:3px;color:#444}
 .card-link{display:inline-block;margin-top:17px;font-weight:900;text-transform:uppercase;border-bottom:3px solid var(--ink)}
-.cricket-hero{padding:65px 0 35px;background:var(--yellow);border-bottom:5px solid var(--ink);position:relative;overflow:hidden}
-.cricket-kicker{font:900 1.4rem 'Bangers';margin:14px 0}
-.cricket-title{font:900 clamp(4rem,10vw,8rem)/.82 'Luckiest Guy';margin:0;text-shadow:5px 5px 0 #fff,8px 8px 0 var(--ink)}
 .cricket-title em{color:var(--pink);font-style:normal}
-.cricket-lead{font-size:1.1rem;line-height:1.7;max-width:820px;margin:22px 0}
-.cricket-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
-.stat{padding:17px;border:4px solid var(--ink);border-radius:16px;background:#fff;box-shadow:5px 5px 0 var(--ink)}
-.stat strong{display:block;font:900 2.8rem 'Bangers'}.stat span{font-weight:900;font-size:.76rem;text-transform:uppercase}
-.cricket-section{padding:55px 0;border-top:5px solid var(--ink)}
-.cricket-section:nth-of-type(even){background:#18c9f5}
-.cricket-section h2{font:900 3.8rem 'Luckiest Guy';margin:0 0 10px;text-shadow:3px 3px 0 #fff,5px 5px 0 var(--ink)}
-.cricket-section h2 em{color:var(--pink);font-style:normal}
 .section-note{max-width:800px;line-height:1.65}
-.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
-.filter{border:4px solid var(--ink);background:#fff;padding:9px 13px;border-radius:999px;font-weight:900;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:.15s}
-.filter.active,.filter:hover{background:var(--pink);color:#fff;transform:translate(-2px,-2px)}
-.matches{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.match-card{padding:18px;border:4px solid var(--ink);border-radius:18px;background:#fff;box-shadow:6px 7px 0 var(--ink);transition:.2s}
-.match-card:hover{transform:translateY(-5px) rotate(-.4deg)}
-.match-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
-.round{font-size:.72rem;font-weight:900;text-transform:uppercase;color:#555}.match-no{font:900 1.2rem 'Bangers';color:var(--pink)}
-.date{margin:14px 0 12px;font-weight:800;font-size:.85rem}
-.teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:7px}.team{font-weight:900;line-height:1.2}.teams .team:last-child{text-align:right}.vs{font:900 1rem 'Bangers';color:var(--red)}
-.rules-box{border:5px dashed var(--ink);padding:24px;border-radius:18px;background:#fff;box-shadow:7px 7px 0 var(--ink)}.rules-box ol{margin:0;padding-left:22px;line-height:1.8;font-weight:700}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.contact-card{padding:17px;border:4px solid var(--ink);border-radius:16px;background:#fff;box-shadow:4px 4px 0 var(--ink)}.team-name{font-weight:900;font-size:1.05rem}.captain,.phone{font-size:.86rem;margin-top:8px}.captain span,.phone span{display:block;font-size:.67rem;font-weight:900;letter-spacing:.1em;color:#666;margin-bottom:2px}.cricket-note{font-weight:800;font-size:.78rem;color:#555;margin-top:22px}
 .event-page{min-height:75vh;display:grid;place-items:center;background:var(--pink);padding:80px 0;border-bottom:5px solid var(--ink)}
 .loading-card{width:min(850px,100%);text-align:center}
 .loading-word{font:900 clamp(4rem,12vw,8rem) 'Luckiest Guy';text-shadow:6px 6px 0 #fff,10px 10px 0 var(--ink)}
@@ -134,13 +114,35 @@ footer{padding:28px 0;background:var(--ink);color:#fff;text-align:center}.footer
 .cursor{position:fixed;pointer-events:none;width:20px;height:20px;border:3px solid var(--ink);border-radius:50%;z-index:200;mix-blend-mode:multiply}
 .doodle{position:absolute;font:900 3rem 'Bangers';z-index:1;transform:rotate(-12deg)}.doodle.one{left:3%;top:12%;color:var(--pink)}.doodle.two{right:3%;bottom:8%;color:var(--purple)}
 .comic-marquee{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.pill{background:#fff;border:3px solid var(--ink);padding:8px 12px;border-radius:999px;font-weight:900;box-shadow:3px 3px 0 var(--ink)}
-@media(max-width:1000px){.hero-grid,.comic-banner,.contribute-grid{grid-template-columns:1fr}.hero-poster{justify-self:center;max-width:650px}.schedule-grid,.sports-grid,.matches{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:repeat(2,1fr)}.cricket-stats{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){
-  .nav{flex-direction:column;align-items:stretch;gap:8px;padding:10px 12px 8px}
-  .brand{font-size:1.65rem;align-self:flex-start;margin-left:4px}
-  .navlinks{width:100%;display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:6px;overflow-x:auto;overflow-y:hidden;padding:6px;background:#fff;border:3px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink);-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:none}
+@media(max-width:1000px){.hero-grid,.comic-banner,.contribute-grid{grid-template-columns:1fr}.hero-poster{justify-self:center;max-width:650px}.schedule-grid,.sports-grid,.matches{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:repeat(2,1fr)}@media(max-width:700px){
+  /* Mobile navigation: keep the title bar compact and let links scroll sideways */
+  .nav{align-items:stretch;flex-direction:column;gap:9px;padding:10px 12px}
+  .brand{align-self:center;font-size:1.05rem}
+  .navlinks{width:100%;display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:7px;overflow-x:auto;overflow-y:hidden;padding:2px 2px 7px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;touch-action:pan-x}
   .navlinks::-webkit-scrollbar{display:none}
-  .navlinks a{flex:0 0 auto;scroll-snap-align:start;font-size:.74rem;line-height:1;padding:9px 11px;border:3px solid var(--ink);background:#fff;border-radius:12px;white-space:nowrap}
-  .navlinks a:hover,.navlinks a.active{box-shadow:2px 2px 0 var(--ink);transform:none}
-  .hero{padding-top:45px}.hero h1{font-size:clamp(4rem,20vw,7rem)}.comic-strip,.fun-grid,.schedule-grid,.sports-grid,.matches,.contact-grid{grid-template-columns:1fr}.qr-grid{grid-template-columns:1fr}.cricket-title{font-size:4.6rem}.cursor{display:none}.section{padding:60px 0}
-}
+  .navlinks a{flex:0 0 auto;white-space:nowrap;scroll-snap-align:start;font-size:.72rem;padding:8px 11px}
+  .hero{padding-top:45px}.hero h1{font-size:clamp(4rem,20vw,7rem)}.comic-strip,.fun-grid,.schedule-grid,.sports-grid,.matches,.contact-grid{grid-template-columns:1fr}.poster-gallery{display:grid;grid-template-columns:1fr;gap:18px}.poster-gallery .comic-card{min-width:0;width:100%}.poster-gallery .comic-card img{height:auto;aspect-ratio:auto;object-fit:contain}.qr-grid{grid-template-columns:1fr}}
+
+/* --- Event detail pages --- */
+.event-detail-hero{background:linear-gradient(135deg,var(--yellow) 0 48%,var(--cyan) 48% 76%,var(--pink) 76%);overflow:hidden}
+.detail-hero-grid,.detail-page-grid{display:grid;grid-template-columns:1fr .82fr;gap:42px;align-items:center}
+.featured-poster img{max-height:690px;object-fit:contain}
+.timeline-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.timeline-card{background:#fff;border:4px solid var(--ink);border-radius:18px;padding:16px 18px;box-shadow:5px 5px 0 var(--ink);position:relative;overflow:hidden}
+.timeline-card:after{content:"POW!";position:absolute;right:-8px;bottom:-16px;font:900 3.4rem 'Bangers';opacity:.12;transform:rotate(-10deg)}
+.timeline-card span{display:block;font:900 1.45rem 'Bangers';color:var(--pink)}
+.timeline-card b{display:block;margin-top:3px}.timeline-card p{margin:4px 0 0;color:#555}
+.event-detail{min-height:calc(100vh - 90px);padding:80px 0;border-bottom:5px solid var(--ink);position:relative;overflow:hidden}
+.event-detail:before{content:"";position:absolute;inset:0;opacity:.16;background-image:radial-gradient(#fff 2px,transparent 2px);background-size:17px 17px;pointer-events:none}
+.event-detail .wrap{position:relative;z-index:1}
+.academic-page{background:linear-gradient(135deg,#fffdf5 0 44%,var(--cyan) 44% 72%,var(--yellow) 72%)}
+.criminal-page{background:linear-gradient(135deg,#17171b,#332719 48%,#101014);color:#fff}
+.criminal-page .detail-lead,.criminal-page .mono{color:#f2eadb}.criminal-page .poster-shell{background:#eee}
+.detail-title{font:900 clamp(4.3rem,9vw,8rem)/.82 'Luckiest Guy';margin:18px 0;text-shadow:6px 6px 0 #fff,10px 10px 0 var(--ink);text-transform:uppercase}
+.detail-title span{color:var(--pink);font-style:normal}.criminal-page .detail-title span{color:var(--yellow)}
+.detail-lead{font-size:1.2rem;line-height:1.7;max-width:760px}.fact-row{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}.fact{background:#fff;color:var(--ink);border:4px solid var(--ink);border-radius:15px;padding:13px 15px;box-shadow:5px 5px 0 var(--ink);min-width:145px}.fact b{display:block;font:900 1.55rem 'Bangers'}.fact span{font-size:.68rem;font-weight:900;letter-spacing:.08em}.poster-feature{transform:rotate(1.5deg);max-width:590px;justify-self:end}.poster-feature img{max-height:720px;object-fit:contain}.academic-poster img{background:#fff}.mystery-poster{transform:rotate(-1.5deg)}
+.rule-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.rule-card{background:#fff;border:5px solid var(--ink);border-radius:20px;padding:22px;box-shadow:var(--shadow)}.rule-card span{font:900 2.8rem 'Bangers';color:var(--pink)}.rule-card h3{font:900 1.8rem 'Bangers';margin:4px 0}.rule-card p{line-height:1.6}
+.mystery-stamp{display:inline-block;border:5px double var(--red);color:var(--red);padding:13px 18px;font:900 1.55rem/1 'Bangers';text-align:center;transform:rotate(-5deg);margin:8px 0 5px}.mystery-stamp small{font:900 .7rem 'Nunito';letter-spacing:.14em}
+.classified-box{background:#1b1916;color:#f8eedc;border:5px solid var(--ink);border-radius:22px;padding:30px;box-shadow:10px 11px 0 var(--ink);position:relative;overflow:hidden}.classified-box:after{content:"CLASSIFIED";position:absolute;right:-30px;top:28px;color:#c22b2b55;font:900 4rem 'Bangers';transform:rotate(12deg)}.classified-box h2{font:900 clamp(2.7rem,6vw,5rem)/.9 'Luckiest Guy';margin:12px 0}.classified-box h2 span{color:var(--pink)}.classified-box p{font-size:1.08rem;line-height:1.7;max-width:760px}.clue-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.clue-row div{border:3px solid #f8eedc;border-radius:999px;padding:8px 12px;font-weight:900}
+@media(max-width:900px){.detail-hero-grid,.detail-page-grid{grid-template-columns:1fr}.poster-feature,.featured-poster{justify-self:center;max-width:680px}.rule-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.detail-title{font-size:clamp(3.7rem,17vw,6rem)}.timeline-grid,.rule-grid{grid-template-columns:1fr}.event-detail{padding:60px 0}.fact{min-width:0;flex:1}.detail-page-grid{gap:28px}.poster-feature img,.featured-poster img{max-height:none}.classified-box{padding:22px}.mystery-stamp{font-size:1.25rem}}
