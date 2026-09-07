@@ -1,21 +1,1088 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Criminal Hunt — MEDLEY 2026 · COMIC CeNSE</title><link rel="stylesheet" href="style.css"></head><body><div class="cursor"></div><nav class="nav">
-<a class="brand" href="index.html">COMIC <span>CeNSE</span></a>
-<div class="navlinks">
-<a href="index.html">HOME</a>
-<a href="contribute.html">CONTRIBUTE</a>
-<a href="sports.html">SPORTS</a>
-<a href="academic-feud.html">ACADEMIC FEUD</a>
-<a href="criminal-hunt.html">CRIMINAL HUNT</a>
-<a href="events.html">EVENT DETAILS</a>
-</div></nav>
-<main>
-<section class="event-detail criminal-page"><div class="case-overlay"></div><div class="wrap detail-page-grid"><div class="detail-copy reveal">
-<div class="badge">🕵️ CLASSIFIED · CASE FILE 03</div><div class="mono">MEDLEY 2026 PRESENTS</div><h1 class="detail-title">CRIMINAL <span>HUNT</span></h1>
-<p class="detail-lead">Something happened. Someone knows something. And five detectives have been assigned to solve the case.</p>
-<div class="mystery-stamp">TOP SECRET<br><small>CASE ACTIVE</small></div>
-<div class="fact-row"><div class="fact"><b>SEP 8</b><span>CASE OPENS</span></div><div class="fact"><b>SEP 10</b><span>CASE CLOSES</span></div><div class="fact"><b>5</b><span>DETECTIVES</span></div></div>
-<div class="speech"><b>THE CLUES ARE OUT THERE.</b><br>Follow the evidence. Trust nobody. Keep the case file close.</div>
-</div><div class="poster-shell reveal poster-feature mystery-poster"><img src="poster-02.png" alt="Criminal Hunt MEDLEY 2026 poster"></div></div></section>
-<section class="section"><div class="wrap"><div class="classified-box"><div class="mono">EVIDENCE BOARD · CLASSIFIED</div><h2>FIVE DETECTIVES. <span class="pink">ONE CASE.</span></h2><p>Teams will be assigned to solve the case. The rest of the story stays classified until the hunt begins.</p><div class="clue-row"><div>🗂️ CASE FILE</div><div>🔎 CLUES</div><div>🕵️ SUSPECTS</div><div>❓ UNKNOWN</div></div></div></div></section></main><footer><div class="footer-fun">CRIMINAL HUNT · COMIC CeNSE · MEDLEY 2026</div><div class="mono">Case status: suspicious. Curiosity: encouraged. 🕵️</div></footer><script src="script.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Criminal Hunt — MEDLEY 2026 · COMIC CeNSE</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =========================================================
+       CRIMINAL HUNT — PAGE-SPECIFIC DESIGN
+       ========================================================= */
+
+    :root {
+      --comic-black: #111111;
+      --comic-white: #fffdf7;
+      --comic-pink: #ff3f81;
+      --comic-red: #ff3155;
+      --comic-yellow: #ffe85c;
+      --comic-blue: #7bdff2;
+      --paper: #fffdf5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle, rgba(0,0,0,.18) 1px, transparent 1.4px);
+      background-size: 9px 9px;
+      background-color: var(--paper);
+      color: var(--comic-black);
+      overflow-x: hidden;
+    }
+
+    /* =========================================================
+       HEADER FIX
+       ========================================================= */
+
+    .criminal-nav {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      width: 100%;
+      z-index: 1000;
+
+      background: #fffdf7;
+      border-bottom: 4px solid var(--comic-black);
+
+      min-height: 74px;
+      padding: 14px 4vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+
+      box-shadow: 0 5px 0 var(--comic-pink);
+    }
+
+    .criminal-nav .brand {
+      font-size: 1.25rem;
+      font-weight: 1000;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .criminal-nav .brand span {
+      color: var(--comic-pink);
+    }
+
+    .criminal-nav .navlinks {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2vw, 28px);
+      flex-wrap: wrap;
+    }
+
+    .criminal-nav .navlinks a {
+      color: var(--comic-black);
+      font-size: .7rem;
+      font-weight: 900;
+      text-decoration: none;
+      letter-spacing: .3px;
+      position: relative;
+      transition: .2s ease;
+    }
+
+    .criminal-nav .navlinks a:hover {
+      color: var(--comic-pink);
+      transform: translateY(-2px);
+    }
+
+    .criminal-nav .navlinks a[href="criminal-hunt.html"] {
+      color: var(--comic-pink);
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .criminal-page {
+      position: relative;
+      min-height: 780px;
+      padding: 70px 0 100px;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle, rgba(0,0,0,.18) 1px, transparent 1.5px);
+      background-size: 10px 10px;
+    }
+
+    /* giant comic background words */
+
+    .criminal-page::before {
+      content: "CASE 03";
+      position: absolute;
+      top: 50px;
+      right: -70px;
+
+      font-size: clamp(7rem, 18vw, 18rem);
+      line-height: .8;
+      font-weight: 1000;
+      color: rgba(255,63,129,.08);
+
+      transform: rotate(-8deg);
+      pointer-events: none;
+    }
+
+    .criminal-page::after {
+      content: "WHO DID IT?";
+      position: absolute;
+      bottom: 20px;
+      left: -30px;
+
+      font-size: clamp(4rem, 12vw, 11rem);
+      font-weight: 1000;
+      color: rgba(0,0,0,.045);
+
+      transform: rotate(-5deg);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .case-overlay {
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      right: -160px;
+      top: 180px;
+
+      background: var(--comic-yellow);
+      border: 5px solid var(--comic-black);
+      border-radius: 50%;
+
+      transform: rotate(12deg);
+      opacity: .8;
+    }
+
+    .detail-page-grid {
+      position: relative;
+      z-index: 3;
+
+      max-width: 1250px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 520px);
+      gap: 75px;
+
+      align-items: center;
+    }
+
+    /* =========================================================
+       LEFT SIDE
+       ========================================================= */
+
+    .detail-copy {
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+
+      background: var(--comic-yellow);
+      color: var(--comic-black);
+
+      border: 3px solid var(--comic-black);
+      border-radius: 6px;
+
+      padding: 10px 17px;
+
+      font-size: .72rem;
+      font-weight: 1000;
+      letter-spacing: .5px;
+
+      box-shadow: 5px 5px 0 var(--comic-black);
+
+      transform: rotate(-2deg);
+      margin-bottom: 28px;
+    }
+
+    .mono {
+      font-family: monospace;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .detail-copy > .mono {
+      display: inline-block;
+      padding: 5px 9px;
+      background: var(--comic-black);
+      color: white;
+      transform: rotate(1deg);
+    }
+
+    .detail-title {
+      margin: 12px 0 10px;
+
+      font-size: clamp(4rem, 7vw, 7.5rem);
+      line-height: .8;
+
+      font-weight: 1000;
+      letter-spacing: -7px;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        6px 6px 0 var(--comic-pink);
+    }
+
+    .detail-title span {
+      display: block;
+      color: var(--comic-pink);
+      text-shadow:
+        5px 5px 0 var(--comic-black);
+    }
+
+    .detail-lead {
+      max-width: 600px;
+
+      font-size: 1.05rem;
+      line-height: 1.65;
+      font-weight: 600;
+
+      border-left: 7px solid var(--comic-black);
+      padding-left: 18px;
+      margin: 28px 0;
+    }
+
+    /* =========================================================
+       CASE STAMP
+       ========================================================= */
+
+    .mystery-stamp {
+      display: inline-block;
+
+      padding: 12px 18px;
+
+      border: 4px solid var(--comic-red);
+      color: var(--comic-red);
+
+      font-weight: 1000;
+      font-size: .9rem;
+      line-height: 1.1;
+
+      transform: rotate(-7deg);
+      margin: 10px 0 30px;
+
+      background: rgba(255,255,255,.75);
+    }
+
+    .mystery-stamp small {
+      font-size: .65rem;
+      letter-spacing: 2px;
+    }
+
+    /* =========================================================
+       FACT CARDS
+       ========================================================= */
+
+    .fact-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 620px;
+      margin-top: 10px;
+    }
+
+    .fact {
+      background: white;
+      border: 3px solid var(--comic-black);
+
+      padding: 16px 13px;
+
+      box-shadow: 5px 5px 0 var(--comic-black);
+
+      transform: rotate(-1deg);
+    }
+
+    .fact:nth-child(2) {
+      transform: rotate(2deg);
+      background: var(--comic-pink);
+      color: white;
+    }
+
+    .fact:nth-child(3) {
+      transform: rotate(-2deg);
+      background: var(--comic-yellow);
+    }
+
+    .fact b {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 1000;
+    }
+
+    .fact span {
+      display: block;
+      margin-top: 3px;
+      font-size: .6rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    /* =========================================================
+       SPEECH BUBBLE
+       ========================================================= */
+
+    .speech {
+      position: relative;
+
+      max-width: 560px;
+      margin-top: 40px;
+
+      padding: 18px 22px;
+
+      background: white;
+      border: 4px solid var(--comic-black);
+      border-radius: 20px;
+
+      font-size: .85rem;
+      line-height: 1.5;
+
+      box-shadow: 7px 7px 0 var(--comic-black);
+
+      transform: rotate(-1deg);
+    }
+
+    .speech::after {
+      content: "";
+
+      position: absolute;
+      left: 38px;
+      bottom: -23px;
+
+      width: 32px;
+      height: 32px;
+
+      background: white;
+      border-right: 4px solid var(--comic-black);
+      border-bottom: 4px solid var(--comic-black);
+
+      transform: rotate(45deg);
+    }
+
+    .speech b {
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    /* =========================================================
+       POSTER
+       ========================================================= */
+
+    .poster-shell {
+      position: relative;
+
+      background: white;
+
+      padding: 18px 18px 28px;
+
+      border: 4px solid var(--comic-black);
+      border-radius: 14px;
+
+      box-shadow:
+        12px 12px 0 var(--comic-black),
+        22px 22px 0 var(--comic-pink);
+
+      transform: rotate(2deg);
+
+      transition: .35s ease;
+    }
+
+    .poster-shell:hover {
+      transform: rotate(0deg) translateY(-8px);
+    }
+
+    .poster-shell::before {
+      content: "EVIDENCE";
+      position: absolute;
+
+      top: -22px;
+      left: 35px;
+
+      padding: 8px 20px;
+
+      background: var(--comic-yellow);
+      border: 3px solid var(--comic-black);
+
+      font-size: .7rem;
+      font-weight: 1000;
+      letter-spacing: 2px;
+
+      transform: rotate(-4deg);
+      z-index: 4;
+    }
+
+    .poster-shell::after {
+      content: "CONFIDENTIAL";
+      position: absolute;
+
+      bottom: 12px;
+      right: -30px;
+
+      padding: 7px 12px;
+
+      background: var(--comic-red);
+      color: white;
+
+      border: 3px solid var(--comic-black);
+
+      font-size: .6rem;
+      font-weight: 1000;
+
+      transform: rotate(-12deg);
+      z-index: 5;
+    }
+
+    .mystery-poster img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      border: 3px solid var(--comic-black);
+    }
+
+    /* =========================================================
+       EVIDENCE SECTION
+       ========================================================= */
+
+    .criminal-evidence {
+      position: relative;
+      padding: 110px 20px;
+
+      background: var(--comic-black);
+      color: white;
+
+      overflow: hidden;
+    }
+
+    .criminal-evidence::before {
+      content: "EVIDENCE";
+      position: absolute;
+
+      right: -50px;
+      top: 30px;
+
+      font-size: 12rem;
+      font-weight: 1000;
+
+      color: rgba(255,255,255,.035);
+      transform: rotate(-8deg);
+    }
+
+    .evidence-inner {
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .evidence-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .evidence-heading .mono {
+      color: var(--comic-yellow);
+    }
+
+    .evidence-heading h2 {
+      margin: 8px 0;
+
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: .9;
+      font-weight: 1000;
+      letter-spacing: -3px;
+    }
+
+    .evidence-heading h2 span {
+      color: var(--comic-pink);
+    }
+
+    .evidence-heading p {
+      max-width: 650px;
+      margin: 20px auto 0;
+
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       CLUE GRID
+       ========================================================= */
+
+    .clue-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .clue-card {
+      min-height: 180px;
+
+      padding: 24px;
+
+      color: var(--comic-black);
+      background: white;
+
+      border: 4px solid var(--comic-black);
+
+      box-shadow: 7px 7px 0 var(--comic-pink);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      transition: .25s ease;
+    }
+
+    .clue-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .clue-card:nth-child(2) {
+      background: var(--comic-yellow);
+      transform: rotate(1deg);
+    }
+
+    .clue-card:nth-child(3) {
+      background: var(--comic-blue);
+      transform: rotate(-1deg);
+    }
+
+    .clue-card:nth-child(4) {
+      background: var(--comic-pink);
+      color: white;
+      transform: rotate(1deg);
+    }
+
+    .clue-icon {
+      font-size: 2rem;
+    }
+
+    .clue-card h3 {
+      margin: 15px 0 5px;
+
+      font-size: 1.3rem;
+      font-weight: 1000;
+    }
+
+    .clue-card p {
+      margin: 0;
+      font-size: .75rem;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       CASE FILE STRIP
+       ========================================================= */
+
+    .case-file-section {
+      padding: 100px 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,63,129,.08) 25%,
+          transparent 25%
+        ),
+        var(--paper);
+    }
+
+    .case-file {
+      max-width: 1050px;
+      margin: auto;
+
+      background: #fff;
+
+      border: 4px solid var(--comic-black);
+
+      padding: 45px;
+
+      box-shadow: 12px 12px 0 var(--comic-black);
+
+      position: relative;
+    }
+
+    .case-file::before {
+      content: "TOP SECRET";
+
+      position: absolute;
+      top: -18px;
+      right: 35px;
+
+      background: var(--comic-red);
+      color: white;
+
+      border: 3px solid var(--comic-black);
+
+      padding: 8px 18px;
+
+      font-weight: 1000;
+      font-size: .7rem;
+
+      transform: rotate(4deg);
+    }
+
+    .case-file h2 {
+      margin: 8px 0 15px;
+
+      font-size: clamp(2rem, 4vw, 4rem);
+      font-weight: 1000;
+      line-height: .9;
+    }
+
+    .case-file h2 span {
+      color: var(--comic-pink);
+    }
+
+    .case-file p {
+      max-width: 750px;
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .file-lines {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .file-line {
+      padding: 14px 0;
+      border-bottom: 2px dashed #999;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      font-family: monospace;
+      font-size: .75rem;
+    }
+
+    .file-line strong {
+      color: var(--comic-pink);
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .criminal-footer {
+      background: var(--comic-pink);
+      color: var(--comic-black);
+
+      padding: 35px 20px;
+
+      text-align: center;
+
+      border-top: 5px solid var(--comic-black);
+    }
+
+    .criminal-footer .footer-fun {
+      font-size: 1rem;
+      font-weight: 1000;
+      letter-spacing: 1px;
+    }
+
+    .criminal-footer .mono {
+      margin-top: 8px;
+      font-size: .65rem;
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 850px) {
+
+      .criminal-nav {
+        min-height: auto;
+        padding: 14px 18px;
+
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .criminal-nav .navlinks {
+        width: 100%;
+        justify-content: flex-start;
+
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+      }
+
+      .criminal-nav .navlinks a {
+        flex: 0 0 auto;
+      }
+
+      .criminal-page {
+        padding: 55px 20px 90px;
+      }
+
+      .detail-page-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+
+      .detail-title {
+        font-size: clamp(4rem, 17vw, 7rem);
+      }
+
+      .poster-shell {
+        max-width: 540px;
+        width: 90%;
+        margin: auto;
+      }
+
+      .clue-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .criminal-page {
+        min-height: auto;
+      }
+
+      .detail-title {
+        letter-spacing: -4px;
+      }
+
+      .detail-lead {
+        font-size: .9rem;
+      }
+
+      .fact-row {
+        grid-template-columns: 1fr;
+      }
+
+      .fact {
+        transform: none !important;
+      }
+
+      .speech {
+        margin-top: 30px;
+      }
+
+      .clue-row {
+        grid-template-columns: 1fr;
+      }
+
+      .case-file {
+        padding: 28px 20px;
+      }
+
+      .file-lines {
+        grid-template-columns: 1fr;
+      }
+
+      .case-overlay {
+        width: 250px;
+        height: 250px;
+        right: -130px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <nav class="nav criminal-nav">
+
+    <a class="brand" href="index.html">
+      COMIC <span>CeNSE</span>
+    </a>
+
+    <div class="navlinks">
+      <a href="index.html">HOME</a>
+      <a href="contribute.html">CONTRIBUTE</a>
+      <a href="sports.html">SPORTS</a>
+      <a href="academic-feud.html">ACADEMIC FEUD</a>
+      <a href="criminal-hunt.html">CRIMINAL HUNT</a>
+      <a href="events.html">EVENT DETAILS</a>
+    </div>
+
+  </nav>
+
+
+  <!-- =======================================================
+       HERO / CASE INTRO
+       ======================================================= -->
+
+  <main>
+
+    <section class="event-detail criminal-page">
+
+      <div class="case-overlay"></div>
+
+      <div class="wrap detail-page-grid">
+
+        <!-- LEFT -->
+
+        <div class="detail-copy reveal">
+
+          <div class="badge">
+            🕵️ CLASSIFIED · CASE FILE 03
+          </div>
+
+          <div class="mono">
+            MEDLEY 2026 PRESENTS
+          </div>
+
+          <h1 class="detail-title">
+            CRIMINAL
+            <span>HUNT</span>
+          </h1>
+
+          <p class="detail-lead">
+            Something happened. Someone knows something.
+            Five detectives. One mystery. And absolutely no
+            room for rookie mistakes.
+          </p>
+
+          <div class="mystery-stamp">
+            TOP SECRET
+            <br>
+            <small>CASE ACTIVE</small>
+          </div>
+
+          <div class="fact-row">
+
+            <div class="fact">
+              <b>SEP 8</b>
+              <span>CASE OPENS</span>
+            </div>
+
+            <div class="fact">
+              <b>SEP 10</b>
+              <span>CASE CLOSES</span>
+            </div>
+
+            <div class="fact">
+              <b>5</b>
+              <span>DETECTIVES</span>
+            </div>
+
+          </div>
+
+          <div class="speech">
+            <b>THE CLUES ARE OUT THERE.</b>
+            <br>
+            Follow the evidence. Trust nobody.
+            Keep your detective instincts switched ON.
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT / POSTER -->
+
+        <div class="poster-shell reveal poster-feature mystery-poster">
+
+          <img
+            src="Criminal Hunt.jpeg"
+            alt="Criminal Hunt MEDLEY 2026 poster"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EVIDENCE BOARD
+         ===================================================== -->
+
+    <section class="criminal-evidence">
+
+      <div class="evidence-inner">
+
+        <div class="evidence-heading">
+
+          <div class="mono">
+            EVIDENCE BOARD · CLASSIFIED
+          </div>
+
+          <h2>
+            FIVE DETECTIVES.
+            <span>ONE CASE.</span>
+          </h2>
+
+          <p>
+            The investigation begins here. Follow the clues,
+            question everything and solve the mystery before
+            the case goes cold.
+          </p>
+
+        </div>
+
+
+        <div class="clue-row">
+
+          <div class="clue-card">
+
+            <div class="clue-icon">🗂️</div>
+
+            <div>
+              <h3>CASE FILE</h3>
+              <p>
+                Everything starts with the evidence.
+                Don't lose the file.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="clue-card">
+
+            <div class="clue-icon">🔎</div>
+
+            <div>
+              <h3>CLUES</h3>
+              <p>
+                Every detail matters.
+                Even the suspicious ones.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="clue-card">
+
+            <div class="clue-icon">🕵️</div>
+
+            <div>
+              <h3>SUSPECTS</h3>
+              <p>
+                Everyone has a story.
+                Not everyone has an alibi.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="clue-card">
+
+            <div class="clue-icon">❓</div>
+
+            <div>
+              <h3>UNKNOWN</h3>
+              <p>
+                The biggest clue is the one
+                nobody has found yet.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CASE FILE DETAILS
+         ===================================================== -->
+
+    <section class="case-file-section">
+
+      <div class="case-file">
+
+        <div class="mono">
+          CASE DOCUMENT · MH-03
+        </div>
+
+        <h2>
+          THE HUNT
+          <span>BEGINS.</span>
+        </h2>
+
+        <p>
+          Teams will be assigned to investigate the case.
+          Detectives must work together, uncover clues and
+          connect the dots to reach the final answer.
+        </p>
+
+        <div class="file-lines">
+
+          <div class="file-line">
+            <span>CASE STATUS</span>
+            <strong>ACTIVE</strong>
+          </div>
+
+          <div class="file-line">
+            <span>DIFFICULTY</span>
+            <strong>CLASSIFIED</strong>
+          </div>
+
+          <div class="file-line">
+            <span>DETECTIVES</span>
+            <strong>05</strong>
+          </div>
+
+          <div class="file-line">
+            <span>MISSION</span>
+            <strong>SOLVE IT</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer class="criminal-footer">
+
+    <div class="footer-fun">
+      CRIMINAL HUNT · COMIC CeNSE · MEDLEY 2026
+    </div>
+
+    <div class="mono">
+      Case status: suspicious. Curiosity: encouraged. 🕵️
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
