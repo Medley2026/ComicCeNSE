@@ -42,6 +42,111 @@ img{max-width:100%;display:block}
 .speech:after{content:"";position:absolute;bottom:-18px;left:48px;width:30px;height:30px;background:#fff;border-right:4px solid var(--ink);border-bottom:4px solid var(--ink);transform:rotate(45deg)}
 .speech b{font:900 1.55rem 'Bangers'}
 /* =========================================================
+   REGISTER FIRST BUTTON
+   ========================================================= */
+
+.register-btn {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: min(620px, 100%);
+  min-height: 100px;
+
+  margin-top: 38px;
+  padding: 18px 30px;
+
+  background: var(--comic-yellow);
+  color: var(--comic-black);
+
+  border: 5px solid var(--comic-black);
+  border-radius: 8px;
+
+  text-decoration: none;
+  text-align: center;
+
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 1000;
+  letter-spacing: 1px;
+
+  box-shadow: 9px 9px 0 var(--comic-black);
+
+  transform: rotate(1deg);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+
+/* Small comic label */
+
+.register-btn span {
+  display: block;
+
+  margin-top: 7px;
+
+  font-family: monospace;
+  font-size: .68rem;
+  letter-spacing: 3px;
+
+  color: white;
+
+  background: var(--comic-pink);
+
+  border: 2px solid var(--comic-black);
+
+  padding: 5px 12px;
+
+  transform: rotate(-1deg);
+}
+
+
+/* Comic star */
+
+.register-btn::before {
+  content: "★";
+
+  position: absolute;
+
+  right: -25px;
+  top: -25px;
+
+  font-size: 2.5rem;
+
+  color: var(--comic-pink);
+
+  -webkit-text-stroke: 3px var(--comic-black);
+
+  transform: rotate(15deg);
+}
+
+
+/* Hover */
+
+.register-btn:hover {
+  background: #fff176;
+
+  transform:
+    translate(-3px, -7px)
+    rotate(-1deg);
+
+  box-shadow: 13px 13px 0 var(--comic-black);
+}
+
+
+/* Click */
+
+.register-btn:active {
+  transform: translate(5px, 5px) rotate(0deg);
+
+  box-shadow: 4px 4px 0 var(--comic-black);
+}
+/* =========================================================
    CRIMINAL HUNT — MAIN CTA BUTTON
    ========================================================= */
 
